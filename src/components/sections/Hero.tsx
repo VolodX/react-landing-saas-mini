@@ -28,7 +28,7 @@ export const Hero = () => {
           <div className="mt-10 w-full flex max-w-md mx-auto lg:mx-0">
             <div className="flex sm:flex-row flex-col gap-5 w-full">
               <form
-                action="#"
+                action="/"
                 className="py-1 pl-6 w-full pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary"
               >
                 <span className="min-w-max pr-2 border-r border-box-border">
