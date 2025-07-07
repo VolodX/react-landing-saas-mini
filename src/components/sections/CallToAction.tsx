@@ -21,7 +21,7 @@ export const CTA = () => {
               marketing efforts. Get data-driven insights and automation at your
               fingertips.
             </Paragraph>
-            <div className="mx-auto max-w-md sm:max-w-xl pt-10 dark:text-white">
+            <div className="mx-auto max-w-md sm:max-w-xl pt-10 text-white">
               <Button> Get In Touch</Button>
             </div>
           </div>

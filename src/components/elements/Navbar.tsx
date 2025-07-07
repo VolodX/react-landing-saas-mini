@@ -4,7 +4,7 @@ import { NavItem } from '../shared/NavItem';
 import { BtnLink } from '../shared/BtnLink';
 import { useThemeStore } from '../../store/ThemeStore';
 
-const navitems = [
+export const navItems = [
   { href: '#', text: 'Home' },
   { href: '#services', text: 'Services' },
   { href: '#about-us', text: 'About Us' },
@@ -31,7 +31,7 @@ export const Navbar = () => {
 
             <div className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center absolute 	top-full left-0 lg:static lg:top-0 bg-body lg:bg-transparent border-x border-x-box-border lg:border-x-0 lg:h-auto h-0 overflow-hidden">
               <ul className="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full lg:justify-center lg:items-center ">
-                {navitems.map((item, key) => (
+                {navItems.map((item, key) => (
                   <NavItem href={item.href} text={item.text} key={key} />
                 ))}
               </ul>
