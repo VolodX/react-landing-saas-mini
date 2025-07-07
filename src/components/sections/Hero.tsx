@@ -16,7 +16,7 @@ export const Hero = () => {
           <h1 className="text-heading-1 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold">
             Empower Your Business
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600 ml-2">
-              width AI
+              with AI
             </span>
           </h1>
           <Paragraph className="mt-8">
@@ -65,8 +65,9 @@ export const Hero = () => {
 
         <div className="flex flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl">
           <img
-            src="https://images.pexels.com/photos/7773731/pexels-photo-7773731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src="/assets/hero.webp"
             alt="Hero image"
+            loading="lazy"
             width={2520}
             height={1418}
             className="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-non max-h-96"

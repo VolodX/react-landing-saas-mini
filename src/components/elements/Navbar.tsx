@@ -2,7 +2,7 @@ import { Container } from '../shared/Container';
 import logo from '/assets/icon.svg';
 import { NavItem } from '../shared/NavItem';
 import { BtnLink } from '../shared/BtnLink';
-import { useThemeStore } from '../../store/ThemeStore';
+import { useThemeStore } from '@/store/ThemeStore';
 
 export const navItems = [
   { href: '#', text: 'Home' },
@@ -42,10 +42,14 @@ export const Navbar = () => {
             <div className="min-w-max flex items-center gap-x-3">
               <button
                 onClick={toggleTheme}
+								role="switch"
+								aria-checked={theme === 'dark'}
+								aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
                 className="outline-hidden flex relative text-heading-2 rounded-full p-2 lg:p-3 border border-box-border cursor-pointer"
               >
                 {theme === 'dark' ? (
                   <svg
+										aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -61,6 +65,7 @@ export const Navbar = () => {
                   </svg>
                 ) : (
                   <svg
+										aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
