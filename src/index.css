@@ -3,21 +3,53 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --breakpoint-xs: 30rem;
+/* =========================
+   🌞 LIGHT THEME (Default)
+   ========================= */
+:root {
+  --radius: 0.625rem;
 
-  --color-bg: 255 255 255;
-  --color-box: 255 255 255;
-  --box-border: 229 231 235;
-  --box-sd: 226 232 240 / 0.5;
-  --heading-1: 23 37 84;
-  --heading-2: 31 41 55;
-  --heading-3: 55 65 81;
-  --faq-border: 0.929 0.013 255.508;
+  --background: oklch(1 0 0);
+  --foreground: rgb(var(--heading-2));
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
+/* =========================
+   🌙 DARK THEME
+   ========================= */
 .dark {
   --color-bg: 3 7 18;
+  --icon-bg: 3 7 18;
   --color-box: 17 24 39;
   --box-border: 243 244 246 / 0.1;
   --box-sd: transparent;
@@ -27,7 +59,6 @@
   --faq-border: 1 0 0 / 10%;
 
   --background: oklch(0.129 0.042 264.695);
-  /* --foreground: oklch(0.984 0.003 247.858); */
   --foreground: rgb(var(--heading-2));
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
@@ -45,11 +76,13 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
+
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
+
   --sidebar: oklch(0.208 0.042 265.755);
   --sidebar-foreground: oklch(0.984 0.003 247.858);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -60,40 +93,15 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-@layer utilities {
-  .bg-body {
-    background-color: rgb(var(--color-bg));
-  }
-  .bg-box-bg {
-    background-color: rgb(var(--color-box));
-  }
-  .text-heading-1 {
-    color: rgb(var(--heading-1));
-  }
-  .text-heading-2 {
-    color: rgb(var(--heading-2));
-  }
-  .text-heading-3 {
-    color: rgb(var(--heading-3));
-  }
-  .faq-border {
-    border-color: oklch(var(--faq-border));
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Raleway", sans-serif;
-}
-
+/* =========================
+   🌐 SHADCN + Tailwind bridge
+   ========================= */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -112,11 +120,13 @@ body {
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -127,48 +137,59 @@ body {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  /* --foreground: oklch(0.129 0.042 264.695); */
-  --foreground: rgb(var(--heading-2));
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  /* --border: oklch(0.929 0.013 255.508); */
-  /* --border: oklch(100% 0.00011 271.152 / 0); */
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+/* =========================
+   ⚙️ CUSTOM THEME VARS
+   ========================= */
+@theme {
+  --breakpoint-xs: 30rem;
+
+  --color-bg: 255 255 255;
+  --icon-bg: 240 234 255;
+  --color-box: 255 255 255;
+  --box-border: 229 231 235;
+  --box-sd: 226 232 240 / 0.5;
+  --heading-1: 23 37 84;
+  --heading-2: 31 41 55;
+  --heading-3: 55 65 81;
+  --faq-border: 0.929 0.013 255.508;
 }
 
+/* =========================
+   🧩 TAILWIND LAYERS
+   ========================= */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Raleway", sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .bg-body {
+    background-color: rgb(var(--color-bg));
+  }
+  .icon-bg {
+    background-color: rgb(var(--icon-bg));
+  }
+  .bg-box-bg {
+    background-color: rgb(var(--color-box));
+  }
+  .text-heading-1 {
+    color: rgb(var(--heading-1));
+  }
+  .text-heading-2 {
+    color: rgb(var(--heading-2));
+  }
+  .text-heading-3 {
+    color: rgb(var(--heading-3));
+  }
+  .faq-border {
+    border-color: oklch(var(--faq-border));
   }
 }

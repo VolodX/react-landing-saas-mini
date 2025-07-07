@@ -35,7 +35,7 @@ export const Pricing = () => {
               >
                 <div className="bg-gradient-to-r from-blue-600 to-violet-600 p-1 rounded-3xl h-full">
                   <div
-                    className="bg-box-bg border border-box-border rounded-3xl shadow-lg shadow-box-shadow
+                    className="bg-box-bg rounded-3xl shadow-lg shadow-box-shadow
                                      p-8 flex flex-col h-full relative"
                   >
                     {plan.bestValue && (

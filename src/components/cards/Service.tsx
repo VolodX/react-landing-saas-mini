@@ -13,7 +13,7 @@ export const Service = ({ title, description, icon, className="" }: ServiceProps
       className={`p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border bg-box-bg shadow-lg
                     shadow-box-shadow relative overflow-hidden ${className}`}
     >
-      <div className="rounded-xl bg-body p-3 text-heading-1 w-max relative">
+      <div className="rounded-xl bg-body shadow shadow-fuchsia-300 p-3 text-heading-1 w-max relative">
         {icon}
       </div>
       <div className="mt-6 space-y-4 relative">
