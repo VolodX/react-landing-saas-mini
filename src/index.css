@@ -13,6 +13,7 @@
   --heading-1: 23 37 84;
   --heading-2: 31 41 55;
   --heading-3: 55 65 81;
+  --faq-border: 0.929 0.013 255.508;
 }
 
 .dark {
@@ -23,8 +24,11 @@
   --heading-1: 255 255 255;
   --heading-2: 243 244 246;
   --heading-3: 209 213 219;
+  --faq-border: 1 0 0 / 10%;
+
   --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
+  /* --foreground: oklch(0.984 0.003 247.858); */
+  --foreground: rgb(var(--heading-2));
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
@@ -71,6 +75,9 @@
   }
   .text-heading-3 {
     color: rgb(var(--heading-3));
+  }
+  .faq-border {
+    border-color: oklch(var(--faq-border));
   }
 }
 
@@ -123,7 +130,8 @@ body {
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  /* --foreground: oklch(0.129 0.042 264.695); */
+  --foreground: rgb(var(--heading-2));
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
